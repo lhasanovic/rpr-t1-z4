@@ -1,5 +1,9 @@
 package ba.unsa.etf.rpr.tutorijal1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 class Predmet {
 
     private String naziv_predmeta;
@@ -30,7 +34,10 @@ class Predmet {
 
         for(int i = 0; i < br_studenata; i++){
             if(niz_studenata[i].getBr_indeksa() == s.getBr_indeksa()){
-                
+                //List<Student> st = Arrays.asList(niz_studenata);
+                //st.remove(i);
+                //niz_studenata = (Student[]) st.toArray();
+                //br_studenata--;
             }
         }
     }
@@ -53,5 +60,16 @@ class Predmet {
 
     public int getMax_br() {
         return max_br;
+    }
+
+    @Override
+    public String toString() {
+        String result = "";
+
+        for(int i = 1; i <= br_studenata; i++){
+            result +="\n" + i + ". " + niz_studenata[i-1];
+        }
+
+        return result;
     }
 }
